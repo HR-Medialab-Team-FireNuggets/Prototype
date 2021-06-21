@@ -12,13 +12,6 @@ function VideoCallPage() {
     const [planner, setPlanner] = useState(false);
     let { videoId } = useParams();
 
-    function onClickHandler() {
-        // join video call  
-
-        // for now we will show the stuff that needs to be taken care of
-        setJoined(true)
-    }
-
     function planMeeting() {
         // open meeting planner for gemeente
         setPlanner(true)
@@ -28,7 +21,12 @@ function VideoCallPage() {
         <div className="call">
             <div className="container">
                 <h1>Here we have a video call</h1>
-                <button onClick={() => {onClickHandler()}} type="button" className="btn btn-primary">Join Call</button>
+                {joined ? 
+                    <div className='in-call'>
+                        <img className='video' src="/images/man.jpg" alt="person"/><br/>
+                        <button onClick={() => setJoined(false)} type="button" className="btn btn-primary">Leave Call</button>
+                    </div>
+                : <button onClick={() => setJoined(true)} type="button" className="btn btn-primary">Join Call</button>}
                 {joined ? 
                     <div className="affairs">
                         <Collapsible trigger="Click this and see the magic!">
@@ -63,7 +61,7 @@ function VideoCallPage() {
                         </Collapsible>
                     </div> : ''
                 }
-            <button onClick={() => {planMeeting()}} type="button" className="btn btn-primary">Plan meeting met gemeente</button>
+            <br/><button onClick={() => {planMeeting()}} type="button" className="btn btn-primary">Plan meeting met gemeente</button>
             {planner
                 ? <div>
                     Let's plan a meeting!
