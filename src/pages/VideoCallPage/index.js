@@ -1,11 +1,16 @@
 import './VideoCallPage.css';
 import { useState } from 'react';
+import {
+    useParams
+  } from "react-router-dom";
+  
 import Collapsible from 'react-collapsible';
 
 
 function VideoCallPage() {
     const [joined, setJoined] = useState(false);
     const [planner, setPlanner] = useState(false);
+    let { videoId } = useParams();
 
     function onClickHandler() {
         // join video call  

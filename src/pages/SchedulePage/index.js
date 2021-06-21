@@ -1,5 +1,6 @@
 import './SchedulePage.css';
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 function SchedulePage(props) {
   const [selectedDate, setSelectedDate] = useState();
@@ -20,10 +21,6 @@ function SchedulePage(props) {
     }
   }
 
-  function handleMeetingClick() {
-    console.log('Open meeting details')
-  }
-
   return (
     <div className="Schedule">
       <div className="container">
@@ -33,7 +30,9 @@ function SchedulePage(props) {
               ? 
                 <div className="open-meetings">
                   <p>Mijn Meetings:</p>
-                  <button onClick={() => handleMeetingClick()}>{meetings}</button>
+                  <Link to='/fcg-nfig-fpy'>
+                    <button>{meetings}</button>
+                  </Link>
                 </div>
               : 'U heeft nog geen meetings ingepland...'
             }

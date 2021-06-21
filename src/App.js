@@ -1,23 +1,30 @@
 import './App.css';
 import { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 import SchedulePage from './pages/SchedulePage';
 import VideoCallPage from './pages/VideoCallPage';
 
 
 function App() {
-  // const [scheduleData, setScheduleData] = useState();
-  const [videoCallStatus, setVideoCallStatus] = useState();
-
-  
 
   return (
-    <div className="App">
-      {videoCallStatus 
-        ? <VideoCallPage />
-        : <SchedulePage videoCall={(status) => setVideoCallStatus(status)}/>
-      }
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/:videoId">
+            <VideoCallPage />
+          </Route>
+          <Route path="/">
+            <SchedulePage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
