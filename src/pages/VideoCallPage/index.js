@@ -24,9 +24,9 @@ function VideoCallPage() {
                 {joined ? 
                     <div className='in-call'>
                         <img className='video' src="/images/man.jpg" alt="person"/><br/>
-                        <button onClick={() => setJoined(false)} type="button" className="btn btn-primary">Leave Call</button>
+                        <button onClick={() => setJoined(false)} type="button" className="btn btn-danger">Leave Call</button>
                     </div>
-                : <button onClick={() => setJoined(true)} type="button" className="btn btn-primary">Join Call</button>}
+                : <button onClick={() => setJoined(true)} type="button" className="btn btn-success">Join Call</button>}
                 {joined ? 
                     <div className="affairs">
                         <Collapsible trigger="Click this and see the magic!">
@@ -61,7 +61,7 @@ function VideoCallPage() {
                         </Collapsible>
                     </div> : ''
                 }
-            <br/><button onClick={() => {planMeeting()}} type="button" className="btn btn-primary">Plan meeting met gemeente</button>
+            <br/><button onClick={() => {planMeeting()}} type="button" className="btn btn-success">Plan meeting met gemeente</button>
             {planner
                 ? <div>
                     Let's plan a meeting!
