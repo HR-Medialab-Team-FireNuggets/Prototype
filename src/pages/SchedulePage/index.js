@@ -47,7 +47,7 @@ function SchedulePage(props) {
             </div>
           </button>
           <button className="date-button col-md-2" onClick={() => onClickHandler('10:00, 13 juli 2021')}>
-            <div className={`date-card ${activeDate === '10:00, 13 juli 202' ? 'active' : ''}`}>
+            <div className={`date-card ${activeDate === '10:00, 13 juli 2021' ? 'active' : ''}`}>
               <p><span>10:00 uur</span></p>
               <p>13 juli 2021</p>
             </div>

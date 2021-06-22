@@ -20,7 +20,7 @@ function VideoCallPage() {
     return (
         <div className="call">
             <div className="container">
-                <h1>Here we have a video call</h1>
+                <h1>Video call</h1>
                 {joined ? 
                     <div className='in-call'>
                         <img className='video' src="/images/man.jpg" alt="person"/><br/>
